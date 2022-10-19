@@ -25,8 +25,11 @@ class Router{
     }
 
     public function run(){
+        $database= new Database();
+        $conexion=$database->getConnection();
 
-        $controller= new $this->controller();
+        
+        $controller= new $this->controller($conexion);
         $method=$this->method;
         $controller->$method();
 
