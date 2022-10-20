@@ -11,7 +11,9 @@ class StockController extends Controller
     }
 
     public function home(){
-    $stock =$this->stockModel->getAll(30);
+$id=$_POST['id'];
+
+    $stock =$this->stockModel->getAll($id);
 
    // echo '<pre>';
     var_dump($stock);

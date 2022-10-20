@@ -195,8 +195,6 @@
                         <h3>No entregado</h3>
                         <p>En lineas</p>
                     </div>
-
-
                 </div>
             </div>
             <!-- ./col -->
@@ -307,8 +305,6 @@
                 </div>
                 <!-- /.card -->
             </div>
-
-
             <div class="col-md-6">
                 <!-- LINE CHART -->
                 <div class="card card-info">
@@ -347,20 +343,15 @@
     
     </div>
 </div>
-
-
 </div>
-
-
-
 <script>
     function cargardato() {
         $.ajax({
+            data:{"id":"1"},
             url: 'http://localhost/Wolfarg/Public/Stock/home',
             type: 'POST'
         }).done(function(resp) {
             alert(resp);
         })
-
     }
 </script>
