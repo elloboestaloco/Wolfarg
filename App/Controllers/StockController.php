@@ -11,11 +11,11 @@ class StockController extends Controller
     }
 
     public function home(){
-    $stock =$this->stockModel->getAll();
+    $stock =$this->stockModel->getAll(30);
 
-    echo '<pre>';
+   // echo '<pre>';
     var_dump($stock);
     
-    echo '</pre>';
+  //  echo '</pre>';
     }
 }

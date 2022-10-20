@@ -11,13 +11,14 @@
             $this->db = $connecion;
         }
 
-        public function getAll(){
-            $stm = $this->db->prepare("SELECT * FROM {$this->table}");
+        public function getAll($id){
+            $stm = $this->db->prepare("SELECT * FROM stock WHERE Fecha BETWEEN DATE_SUB(CURDATE(), INTERVAL :id DAY) AND CURDATE() ORDER BY stock.Fecha DESC");
+            $stm->bindValue(":id", $id);
             $stm->execute();
             return $stm->fetchAll();
         }
         public function getById($id){
-            $stm = $this->db->prepare("SELECT * FROM {$this->table} WHERE id = :id");
+            $stm = $this->db->prepare("SELECT * FROM stock WHERE Fecha BETWEEN DATE_SUB(CURDATE(), INTERVAL :id DAY) AND CURDATE() ORDER BY stock.Fecha DESC");
             $stm->bindValue(":id", $id);
             $stm->execute();
             return $stm->fetch();
