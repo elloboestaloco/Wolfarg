@@ -11,16 +11,27 @@
             $this->db = $connecion;
         }
 
-        public function getAll($id){
-            $stm = $this->db->prepare("SELECT * FROM stock WHERE Fecha BETWEEN DATE_SUB(CURDATE(), INTERVAL :id DAY) AND CURDATE() ORDER BY stock.Fecha DESC");
+        public function getAll($id,$tp){
+            $stm = $this->db->prepare("SELECT * FROM stock WHERE Tipo=:tp AND Fecha BETWEEN DATE_SUB(CURDATE(), INTERVAL :id DAY) AND CURDATE() ORDER BY stock.Fecha ASC");
             $stm->bindValue(":id", $id);
+            $stm->bindValue(":tp", $tp);
             $stm->execute();
             return $stm->fetchAll();
         }
         public function getById($id){
-            $stm = $this->db->prepare("SELECT * FROM stock WHERE Fecha BETWEEN DATE_SUB(CURDATE(), INTERVAL :id DAY) AND CURDATE() ORDER BY stock.Fecha DESC");
+            $stm = $this->db->prepare("SELECT * FROM stock WHERE Fecha BETWEEN DATE_SUB(CURDATE(), INTERVAL 0 DAY) AND CURDATE() ORDER BY stock.Fecha DESC");
             $stm->bindValue(":id", $id);
             $stm->execute();
+           // SELECT sum(Lineas) FROM `stock` WHERE `Deposito` LIKE 'MA01' AND `Tipo` LIKE 'faltante'AND Fecha BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 DAY) AND CURDATE() ORDER BY stock.Fecha ASC;
+            return $stm->fetch();
+        }
+        public function getFechaId($id, $dp){
+            $stm = $this->db->prepare("SELECT sum(Lineas) FROM `stock` WHERE `Deposito` LIKE :dp AND `Tipo` LIKE :id AND Fecha BETWEEN DATE_SUB(CURDATE(), INTERVAL 0 DAY) AND CURDATE() ORDER BY stock.Fecha ASC");
+            $stm->bindValue(":id", $id);
+            $stm->bindValue(":dp", $dp);
+
+            $stm->execute();
+           // SELECT sum(Lineas) FROM `stock` WHERE `Deposito` LIKE 'MA01' AND `Tipo` LIKE 'faltante'AND Fecha BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 DAY) AND CURDATE() ORDER BY stock.Fecha ASC;
             return $stm->fetch();
         }
         public function deleteById($id){

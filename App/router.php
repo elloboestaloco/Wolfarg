@@ -16,7 +16,7 @@ class Router{
 // var_dump($url);
 
          $this->controller= !empty($url[1]) ?$url[1] :'Page';
-         $this->method= !empty($url[2]) ?$url[2] :'home';
+         $this->method= !empty($url[2]) ?$url[2] :'Faltante';
          
          $this->controller= $this->controller .'controller';
 
@@ -26,9 +26,7 @@ class Router{
 
     public function run(){
         $database= new Database();
-        $conexion=$database->getConnection();
-
-        
+        $conexion=$database->getConnection();      
         $controller= new $this->controller($conexion);
         $method=$this->method;
         $controller->$method();

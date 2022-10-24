@@ -1,4 +1,5 @@
 <?php
+use function MongoDB\BSON\toJSON;
 require_once(__DIR__.'/../models/Stock.php');
 
 class StockController extends Controller
@@ -10,12 +11,24 @@ class StockController extends Controller
        $this->stockModel=new Stock($conexion);
     }
 
-    public function home(){
-    $stock =$this->stockModel->getAll(30);
+    public function Faltante(){
+    $id=$_POST['id'];
+    $tp=$_POST['tipo'];
+    $stock =$this->stockModel->getAll($id,$tp);
 
-   // echo '<pre>';
-    var_dump($stock);
+   // echo '<pre>';json_encode(
+    echo  json_encode($stock);
     
   //  echo '</pre>';
     }
+    public function depof(){
+      $id=$_POST['id'];
+      $dp=$_POST['dp'];
+      $stock =$this->stockModel->getFechaId($id,$dp);
+  
+     // echo '<pre>';json_encode(
+      echo json_encode ($stock);
+      
+    //  echo '</pre>';
+      }
 }

@@ -143,14 +143,12 @@
     <script src="<?= URL_PATH  ?>/Assets/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
-        $.widget.bridge('uibutton', $.ui.button)
+  //      $.widget.bridge('uibutton', $.ui.button)
     </script>
     <!-- Bootstrap 4 -->
     <script src="<?= URL_PATH  ?>/Assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- ChartJS -->
     <script src="<?= URL_PATH  ?>/Assets/plugins/chart.js/Chart.min.js"></script>
-    <!-- Sparkline -->
-    <!-- <script src="<?= URL_PATH  ?>/Assets/plugins/sparklines/sparkline.js"></script> -->
     <!-- JQVMap -->
     <script src="<?= URL_PATH  ?>/Assets/plugins/jqvmap/jquery.vmap.min.js"></script>
 
@@ -169,8 +167,13 @@
     <script src="<?= URL_PATH  ?>/Assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
     <script src="<?= URL_PATH  ?>/Assets/dist/js/adminlte.js"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <!-- <script src="<?= URL_PATH  ?>/Assets/dist/js/pages/dashboard.js"></script> -->
+<!-- FLOT CHARTS -->
+<script src="<?= URL_PATH  ?>/Assets/plugins/flot/jquery.flot.js"></script>
+<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+<script src="<?= URL_PATH  ?>/Assets/plugins/flot/plugins/jquery.flot.resize.js"></script>
+<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+<script src="<?= URL_PATH  ?>/Assets/plugins/flot/plugins/jquery.flot.pie.js"></script>
+
 </body>
 
 </html>

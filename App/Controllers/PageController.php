@@ -6,19 +6,34 @@ class PageController extends Controller
         
     }
 
-
-    public function home(){
+    public function Faltante(){
       
-        $this->render('home',[],'site');
+        $this->render('Faltante',[],'site');
 
     }
-    public function listar(){
+    public function Desarme(){
 
-   $this->render(('home'));
+        $this->render('Desarme',[],'site');
     }
-    public function modificar(){
+    public function NoEntregado(){
 
-        $this->render(('home'));
+        $this->render('NoEntregado',[],'site');
         
     }
+    public function Stagein(){
+
+        $this->render('Stagein',[],'site');
+        
+    }
+    public function RepeticionRack(){
+
+        $this->render('RepeticionRack',[],'site');
+        
+    }
+    public function Ulote(){
+
+        $this->render('Ulote',[],'site');
+        
+    }
+
 }
