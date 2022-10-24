@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="<?= URL_PATH  ?>/Assets/plugins/summernote/summernote-bs4.min.css">
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini sidebar-collapse">
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -121,13 +121,13 @@
 
 
 
-        <footer class="main-footer">
+        <!-- <footer class="main-footer">
             <strong>Copyright &copy; 20122-2022 <a href="https://wolfarg.com/">wolfar.com</a>.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
                 <b>Version</b> 1.4
             </div>
-        </footer>
+        </footer> -->
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">

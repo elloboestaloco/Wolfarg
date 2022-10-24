@@ -12,7 +12,7 @@
                         <a href="<?= URL_PATH ?>/Page/RepeticionRack" class="btn btn-dark btn-lg" role="button" aria-pressed="true">Repeticion en
                             racks</a>
                         <a href="<?= URL_PATH ?>/Page/Ulote" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Ulote</a>
-</div>
+                    </div>
                 </div><!-- /.col -->
             </div><!-- /.row -->
             </center>
@@ -33,9 +33,11 @@
                 <div class="col-lg-2 col-6">
                     <!-- small box -->
                     <div class="small-box bg-transparent">
-                        <label class='col-md-12 control-label'>Tipo Ubicacion</label>
-                        <label class='col-md-12 control-label'><?php echo $tipo; ?></label>
-              
+                    <div class="inner">
+                        <h4 style="font-size: 20px">Tipo Ubicacion</h4>
+                         
+                        <h1  style="font-size: 44px">Ulote</h1>
+                        </div>
 
                     </div>
                 </div>
@@ -45,7 +47,7 @@
                     <div class="small-box bg-light">
                         <div class="inner">
                             <h3 id="RS05">
-                                <? ?>
+
                             </h3>
 
                             <p>RS05</p>
@@ -210,7 +212,7 @@ function tipos(tip) {
 }
    
     function FechS(ubi) {
-        var date = new Date(ubi);
+        var date = new Date(ubi + "T00:00:00");
         // Get year, month, and day part from the date
         var year = date.toLocaleString("default", { year: "numeric" });
         var month = date.toLocaleString("default", { month: "2-digit" });

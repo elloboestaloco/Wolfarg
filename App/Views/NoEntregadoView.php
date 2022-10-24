@@ -33,9 +33,11 @@
                 <div class="col-lg-2 col-6">
                     <!-- small box -->
                     <div class="small-box bg-transparent">
-                        <label class='col-md-12 control-label'>Tipo Ubicacion</label>
-                        <label class='col-md-12 control-label'><?php echo $tipo; ?></label>
-              
+                    <div class="inner">
+                        <h4 style="font-size: 20px">Tipo Ubicacion</h4>
+                         
+                        <h1  style="font-size: 32px">No entregados</h1>
+                        </div>
 
                     </div>
                 </div>
@@ -209,7 +211,7 @@ function tipos(tip) {
 }
    
     function FechS(ubi) {
-        var date = new Date(ubi);
+        var date = new Date(ubi + "T00:00:00");
         // Get year, month, and day part from the date
         var year = date.toLocaleString("default", { year: "numeric" });
         var month = date.toLocaleString("default", { month: "2-digit" });
