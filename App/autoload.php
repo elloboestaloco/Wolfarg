@@ -1,5 +1,5 @@
 <?php
-
+require_once(__DIR__.'/Helpers/common.php');
 require_once(__DIR__.'/Core/Cotroller.php');
 require_once(__DIR__.'/Services/Database.php');
 require_once(__DIR__.'/Core/Orm.php');

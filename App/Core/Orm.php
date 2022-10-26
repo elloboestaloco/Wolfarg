@@ -10,7 +10,11 @@
             $this->table = $table;
             $this->db = $connecion;
         }
-
+        public function getAll1(){
+            $stm = $this->db->prepare("SELECT * FROM stock  ORDER BY stock.Fecha ASC");
+            $stm->execute();
+            return $stm->fetchAll();
+        }
         public function getAll($id,$tp){
             $stm = $this->db->prepare("SELECT * FROM stock WHERE Tipo=:tp AND Fecha BETWEEN DATE_SUB(CURDATE(), INTERVAL :id DAY) AND CURDATE() ORDER BY stock.Fecha ASC");
             $stm->bindValue(":id", $id);

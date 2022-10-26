@@ -6,7 +6,7 @@ class PageController extends Controller
         
     }
 
-    public function Faltante(){
+    public function home(){
       
         $this->render('Faltante',[],'site');
 

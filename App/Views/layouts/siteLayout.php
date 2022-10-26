@@ -167,12 +167,7 @@
     <script src="<?= URL_PATH  ?>/Assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
     <script src="<?= URL_PATH  ?>/Assets/dist/js/adminlte.js"></script>
-<!-- FLOT CHARTS -->
-<script src="<?= URL_PATH  ?>/Assets/plugins/flot/jquery.flot.js"></script>
-<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-<script src="<?= URL_PATH  ?>/Assets/plugins/flot/plugins/jquery.flot.resize.js"></script>
-<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-<script src="<?= URL_PATH  ?>/Assets/plugins/flot/plugins/jquery.flot.pie.js"></script>
+
 
 </body>
 
